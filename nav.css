@@ -1,0 +1,211 @@
+
+:root {
+    --nav-bg-color: #fafff9; 
+    --nav-bg-color-shift: #f1ffef; 
+    --navdiv-bg-color:#78c81e; 
+    --nav-button-color: #78c81e;
+    --nav-button-color-hover: #a4e758;
+    --nav-font-size: 1.3em;
+    --nav-icon-font-size: .9rem;
+    --logo-font-size: 1.5rem;
+    --subnav-desktop-width: 16rem;
+    --nav-text-color: #575757;
+    --nav-text-button-color: #ececec;
+    --nav-text-color-hover: #9e9d9d;
+  }
+  
+  * {
+
+    padding: 0;
+    margin: 0;
+  }
+  html {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 1rem;
+    background-color: white;
+    
+  }
+  .page-container {
+    height: 100vh;
+    display:flex; 
+    flex-direction:column; 
+  }
+  nav {
+    
+    font-size: var(--nav-font-size);
+    background: var(--nav-bg-color);
+    font-weight: 600;
+    padding: 0 1rem;
+  }
+  a {
+    cursor: pointer;
+    color: var(--nav-text-color);
+    text-decoration: none;
+  }
+  
+  .submenu {
+    list-style-type: none;
+  }
+  .logo {
+    font-size: var(--logo-font-size);
+    font-weight: 700;
+    padding: .5rem 1rem;
+  }
+  .navitem {
+    padding: .6rem;
+  }
+  .navitem.navbutton {
+    padding: .6rem .3rem;
+  }
+  .toggle a:hover,
+  .logo a:hover,
+  .navitem:not(.navbutton) a:hover,
+  .navitem a:hover{
+    color: var(--nav-text-color-hover);
+  }
+  
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .menu li a {
+    display: block;
+    padding: 1rem .3rem;
+  }
+  .menu li.subitem a {
+    padding: 1rem;
+  }
+  .toggle {
+    order: 1;
+    font-size: var(--nav-font-size);
+  }
+  .navitem.navbutton {
+    order: 2;
+  }
+  .navitem {
+    order: 3;
+    width: 100%;
+    text-align: center;
+    display: none;
+  }  
+  .active .navitem {
+    display: block;
+  }
+  .navbutton.secondary {
+    border-bottom: 1px #444 solid;
+  }
+  .submenu {
+    display: none;
+  }
+  .submenu-active .submenu {
+    display: block;
+  }
+  .has-submenu i {
+    font-size: 12px;
+  }
+  .has-submenu > a::after {
+    font-family: "Font Awesome 5 Free";
+    font-size: var(--nav-icon-font-size);
+    line-height: 1rem;
+    font-weight: 900;
+    content: "\f078";
+    color: var(--nav-text-color);
+    padding-left: .3rem;
+  }
+  .subitem a {
+    padding: 10px 15px;
+  }
+  .submenu-active {
+    background-color: var(--nav-bg-color-shift);
+    border-radius: .4rem;
+  }
+  
+  @media all and (min-width: 700px) {
+    .menu {
+      justify-content: center;
+    }
+    .logo {
+      flex: 1;
+    }
+    .navitem.navbutton {
+      width: auto;
+      order: 1;
+      display: block;
+    }
+      .navbutton a {
+      color: var(--nav-text-button-color);
+    }
+    .toggle {
+      flex: 1;
+      text-align: right;
+      order: 2;
+    }
+    .menu li.navbutton a {
+      padding: .6rem 1rem;
+      margin: .3rem 0;
+    }
+    .navbutton a {
+      background: var(--nav-button-color);
+    }
+    .navbutton.secondary {
+      border: 0;
+    }
+    .navbutton.secondary a {
+      background: transparent;
+      border: 1px #0080ff solid;
+    }
+    .navbutton a:hover {
+      text-decoration: none;
+    }
+    .navbutton:not(.secondary) a:hover {
+      background: var(--nav-button-color-hover);
+    }
+  }
+  @media all and (min-width: 1016px) {
+    .menu {
+      align-items: flex-start;
+      flex-wrap: nowrap;
+      background: none;
+    }
+    .logo {
+      order: 0;
+      padding: .5rem;
+    }
+    .navitem {
+      order: 1;
+      position: relative;
+      display: block;
+      width: auto;
+    }
+    .navbutton {
+      order: 2;
+    }
+    .submenu-active .submenu {
+      display: block;
+      width: var(--subnav-desktop-width);
+      position: absolute;
+      left: 0;
+      top: 4.27rem;
+      background: var(--nav-bg-color-shift);
+    }
+    .toggle {
+      display: none;
+    }
+    .submenu-active {
+      border-radius: 0;
+    }
+  }
+  
+  .navdiv {
+    margin: 0;
+    padding: 0;
+    color: var(--navdiv-bg-color);
+    background-color: var(--navdiv-bg-color);
+  }
