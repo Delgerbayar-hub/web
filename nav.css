@@ -10,8 +10,9 @@
     --logo-font-size: 1.5rem;
     --subnav-desktop-width: 16rem;
     --nav-text-color: #575757;
-    --nav-text-button-color: #ececec;
-    --nav-text-color-hover: #9e9d9d;
+    --nav-text-button-color: black;
+
+
   }
   
   * {
@@ -192,7 +193,7 @@
       width: var(--subnav-desktop-width);
       position: absolute;
       left: 0;
-      top: 4.27rem;
+      top: 4.25rem;
       background: var(--nav-bg-color-shift);
     }
     .toggle {
