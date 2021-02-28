@@ -1,8 +1,7 @@
 :root {
-    --footer-font-size: 0,6rem;
+    --footer-font-size: 1rem;
     --footer-bg-color: #545871;
     --footer-text-color: #ececec;
-    --footer-display:inline;
 }
 
 footer {
@@ -10,8 +9,6 @@ footer {
     font-size: var(--footer-font-size);
     background: var(--footer-bg-color);
     font-weight: 600;
-    display: inline-block;
-  
 }
 
 footer a {
@@ -20,15 +17,43 @@ footer a {
     text-decoration: none;
 }
 
-
+footer ul {
+    margin: 1rem 5rem;
+    display: flex;
+    flex-direction: column;
+}
 
 footer li {
     margin-left: 0rem;
     padding: 1rem;
     color: var(--footer-text-color);
-    display: inline-block;
-    text-align: center;
+}
 
+@media all and (min-width: 700px) {
+    footer ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
+    footer li {
+        display: block;
+        flex: 1;
+        min-width: 40%;
+        max-width: 40%;
+
+    }
+}
+
+@media all and (min-width: 1330px) {
+    .footer ul {
+        flex-direction: column;
+    }
+    footer li {
+        flex: 1;
+        min-width: 10%;
+        max-width: 20%;
+    }
 }
 
 
